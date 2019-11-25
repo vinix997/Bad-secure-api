@@ -13,7 +13,17 @@
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'username' => $faker->username,
         'email' => $faker->email,
+        'password' => $faker->password(4,7),
+    ];
+});
+
+$factory->define(App\UserProfile::class, function (Faker\Generator $faker)
+{
+    return [
+        'firstname' => $faker->firstName('male'),
+        'lastname' => $faker->lastName,
+        'gender' => "male",
     ];
 });

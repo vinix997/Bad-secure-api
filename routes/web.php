@@ -12,5 +12,8 @@
 */
 
 $router->get('/', function () use ($router) {
+   
     return $router->app->version();
 });
+
+$router->get('/profiles/{user_id}', ['uses' => 'ProfileController@profileView']);
